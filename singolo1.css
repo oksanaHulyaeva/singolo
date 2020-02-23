@@ -232,6 +232,7 @@ header h1 {
     color: #666d89;
     margin: 0 0 10px 0;
     cursor: pointer;
+    letter-spacing: -0.2px;
 }
 .flex-element {
     width: 300px;
@@ -254,6 +255,8 @@ header h1 {
     width: 220px;
     height: 100%;
     line-height: 19px;
+    margin-top: -2px;
+    letter-spacing: -0.1px;
 }
 
 .ico-pen {
