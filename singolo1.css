@@ -1,7 +1,7 @@
 @import url('fonts.css');
 
 a {
-    text-decoration: none;
+   text-decoration: none;
 }
 
 .main-wrapper {
@@ -12,9 +12,9 @@ a {
 .header{
     height: 88px;
     background-color: #2d303a;
-    border-bottom: 5px solid #323746;
-    
+    border-bottom: 5px solid #323746; 
 }
+
 header .wrapper {
     width: 940px;
     height: 20px;
@@ -27,7 +27,6 @@ header .wrapper {
     padding: 29px 40px 37px 40px;
 }
 
-
 header h1 {
     color: #fff;
     padding: 0;
@@ -37,13 +36,12 @@ header h1 {
     font-weight: 500;
     font-family: "Lato Bold", sans-serif;
     font-stretch: ultra-condensed;
-
 }
 
 .navigation{
     width: 370px;
-	display: flex;
-	display: -ms-flexbox;
+    display: flex;
+    display: -ms-flexbox;
     justify-content: space-between;
     -ms-flex-pack: justify;
     color: #fff;
@@ -53,7 +51,6 @@ header h1 {
     margin-bottom: 0;
     font-stretch: extra-condensed;
 }
-
 
 .navigation li{
     list-style-type: none;
@@ -76,12 +73,12 @@ header h1 {
     top: 7px;
     right: -17px;
 }
+
 .navigation li:last-child::after {
     content:"";
     width: 0;
     height: 0;
 }
-
 
 .active {
     color: #f06c64;
@@ -125,7 +122,6 @@ header h1 {
     position: relative;
     left: -3px;
     top: -1px;
-
 }
 
 .vertical-cover {
@@ -146,7 +142,6 @@ header h1 {
     position: relative;
     top: -2px;
     left: 9px;
-
 }
 
 .horizontal-cover {
@@ -163,10 +158,12 @@ header h1 {
     width: 16px;
     height: 28px;
 }
+
 .arrow-left:hover, .arrow-right:hover {
     cursor: pointer;
     opacity: 0.5;
 }
+
 /* SERVICES */
 
 .services {
@@ -177,7 +174,6 @@ header h1 {
     font-family: "Lato Light", sans-serif;
     font-size: 18px; 
     color: #767e9e;
-
 }
 
 .services .wrapper {
@@ -185,7 +181,6 @@ header h1 {
     height: 364px;
     margin: 0 auto;
     padding-left: 3px;
-
 }
 
 .services .description {
@@ -199,14 +194,12 @@ header h1 {
     color: #666d89;
     margin: 0 0 20px 0;
     cursor: pointer;
-    
 }
 
 .description p {
     margin: 0;
     line-height: 30px;
     letter-spacing: 0.2px;
-
 }
 
 .layout-3-column {
@@ -234,6 +227,7 @@ header h1 {
     cursor: pointer;
     letter-spacing: -0.2px;
 }
+
 .flex-element {
     width: 300px;
     height: 87px;
@@ -242,7 +236,6 @@ header h1 {
     justify-content: space-between;
     -ms-flex-pack: justify;
     margin-bottom: 35px;
-
 }
 
 .layout-3-column .ico {
@@ -262,18 +255,23 @@ header h1 {
 .ico-pen {
     background-image: url(assets/img/pen.png);
 }
+
 .ico-bulb {
     background-image: url(assets/img/bulb.png);
 }
+
 .ico-heart {
     background-image: url(assets/img/heart.png);
 }
+
 .ico-phone {
     background-image: url(assets/img/phone.png);
 }
+
 .ico-bubble {
     background-image: url(assets/img/bubble.png);
 }
+
 .ico-star {
     background-image: url(assets/img/star.png);
 }
