@@ -55,11 +55,12 @@ header h1 {
     -ms-flex-pack: justify;
     color: #fff;
     font-size: 12px;
-    margin-top: 13px;
+    margin-top: 11px;
     font-weight: 500;
     margin-bottom: 0;
     font-stretch: extra-condensed;
     padding: 0;
+    line-height: 15px;
 }
 
 .navigation li{
