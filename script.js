@@ -117,7 +117,7 @@ const formHandler = () => {
             event.preventDefault();
             
             subject.value ? popupTopic.innerHTML = ('Тема: ' + subject.value) : popupTopic.innerHTML ='Без темы';
-            describe.value ? popupDescript.innerHTML = ('Описание: ' + describe.value) : popupTopic.innerHTML ='Без описания';
+            describe.value ? popupDescript.innerHTML = ('Описание: ' + describe.value) : popupDescript.innerHTML ='Без описания';
         
             popup.classList.remove('hidden');
         });
