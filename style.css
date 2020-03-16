@@ -6,7 +6,70 @@
 
 a {
     text-decoration: none;
+    color: #fff;
  }
+
+.portfolio-borders {
+    border: 5px solid #F06C64;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#slide1 {
+    width: 788px;
+    position: relative;
+
+}
+
+#slide2 {
+    width: 788px;
+    height: 483px;
+    background-image: url(assets/img/Slide-2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.home-button-vert, .home-button-hor {
+    width: 43px;
+    height: 43px;
+    background-image: url(assets/img/home-button.png);
+    position: absolute;
+}
+.home-button-vert{
+    top: 407px;
+    left: 86px;
+}
+
+.home-button-hor{
+    top: 85px;
+    left: 8px;
+}
+#popup {
+    width: 300px;
+    height: 250px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    padding: 40px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+
+}
+
+#popup p {
+    font-family: "Lato Black", sans-serif;
+    font-size: 18px;
+    color: #666d89;
+    margin: 0 0 10px 0;
+}
+#popup button {
+    display: block;
+    margin: 40px auto;
+}
 
  .main-wrapper {
     width: 1020px;
@@ -17,10 +80,17 @@ a {
     color: #f06c64;
 }
 
+/*HEADER*/
+
+
 .header{
     height: 95px;
+    width: 1020px;
     background-color: #2d303a;
-    border-bottom: 6px solid #323746; 
+    border-bottom: 6px solid #323746;
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }
 
 header .wrapper {
@@ -69,7 +139,7 @@ header h1 {
     position: relative;
 }
 
-.navigation li:hover {
+.navigation a:hover {
     color: #f06c64;
     cursor: pointer;
 }
@@ -104,6 +174,7 @@ header h1 {
     padding-bottom: 58px;
     padding-right: 39px;
     box-sizing: border-box;
+    margin-top: 95px;
 }
 
 .slider .wrapper {
@@ -118,6 +189,7 @@ header h1 {
     -ms-flex-align: center;
 }
 
+
 .arrow-left {
     width: 16px;
     height: 28px;
@@ -126,6 +198,7 @@ header h1 {
 .phone-vertical {
     width: 240px;
     height: 483px;
+    float: left;
     background-image: url(assets/img/iphone-v.png);
     background-repeat: no-repeat;
     position: relative;
@@ -149,8 +222,8 @@ header h1 {
     background-image: url(assets/img/iphone-h.png);
     background-repeat: no-repeat;
     position: relative;
-    top: -1px;
-    left: 7px;
+    top: 121px;
+    left: 308px;
 }
 
 .horizontal-cover {
@@ -379,6 +452,7 @@ button.active, button:hover {
     height: 187px;
     background-color: #464b5e;
     background-position: center;
+
 }
 
 .layout-4-column .portfolio-item:nth-child(n+13){
@@ -621,6 +695,7 @@ div.employee-photo.employee1 {
     -ms-flex-pack: justify;
     font-family: "Lato Regular", sans-serif;
     font-size: 12px;
+
 }
 
 .contact-us .contact_form {
