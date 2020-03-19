@@ -34,20 +34,33 @@ const sliderHandler = () => {
     togglePhoneScreen(slider);
 }
 
-const changeSlides = (elem) => {   
+const changeSlides = (elem) => {
     let leftArrow = elem.querySelector('.arrow-left'),
         rightArrow = elem.querySelector('.arrow-right'),
-        firstSlide = elem.querySelector('#slide1'),
-        secondSlide = elem.querySelector('#slide2');
+        slides = elem.querySelectorAll('.slides');
 
-    leftArrow.addEventListener('click', () => {firstSlide.classList.toggle('hidden');
-        secondSlide.classList.toggle('hidden');
-    })
-    
-    rightArrow.addEventListener('click', () => {firstSlide.classList.toggle('hidden');
-        secondSlide.classList.toggle('hidden');
-    })
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    const plusSlide = () => { showSlides(slideIndex += 1) };
+
+    const minusSlide = () => { showSlides(slideIndex -= 1) };
+
+    function showSlides(n) {
+
+        if (n > slides.length) slideIndex = 1;
+        if (n < 1) slideIndex = slides.length;
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+
+    leftArrow.addEventListener('click', () => { minusSlide() });  
+    rightArrow.addEventListener('click', () => { plusSlide() });
 }
+
 
 const togglePhoneScreen = (elem) => {
     let homeButtonVert = elem.querySelector('.home-button-vert'),
