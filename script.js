@@ -1,5 +1,5 @@
 window.onload = function() {
-    menuHandler();
+    document.addEventListener('scroll', scrollHandler);
     sliderHandler();
     portfolioHandler();
     formHandler();
@@ -7,23 +7,23 @@ window.onload = function() {
 
 //HEADER
 
-const menuHandler = () => {
+const scrollHandler = () => {
 
-    let navPanel = document.querySelector('ul.navigation');
-    let anchors = navPanel.querySelectorAll('li > a');
+    let sections = document.querySelectorAll('section'),
+        anchors = document.querySelectorAll('li > a'),
+        currentPos = window.scrollY+95;
 
-    navPanel.addEventListener('click', (event) => {
-        event.preventDefault();
-        if(event.target.tagName != 'A') return;   
-
-        anchors.forEach((item) => {item.classList.remove('active');
-        })
-        event.target.classList.add('active');
-    
-        let elemID = event.target.getAttribute('href').substr(1);
-        document.getElementById(elemID).scrollIntoView({ behavior: 'smooth',
-        block: 'start'})
+    sections.forEach((elem) => {
+        if ((elem.offsetTop <= currentPos) && (elem.offsetTop + elem.offsetHeight) > currentPos){
+            anchors.forEach((a) => {  
+                a.classList.remove('active');
+                if(elem.getAttribute('id') === a.getAttribute('href').substring(1)){
+                    a.classList.add('active');
+                }
+            })
+        }
     })
+
 }
 
 //SLIDER
@@ -36,8 +36,8 @@ const sliderHandler = () => {
 
 const changeSlides = (elem) => {
     let leftArrow = elem.querySelector('.arrow-left'),
-        rightArrow = elem.querySelector('.arrow-right'),
-        slides = elem.querySelectorAll('.slides');
+    rightArrow = elem.querySelector('.arrow-right'),
+    slides = elem.querySelectorAll('.slides');
 
     let slideIndex = 1;
     showSlides(slideIndex);
@@ -129,8 +129,8 @@ const formHandler = () => {
         
             event.preventDefault();
             
-            subject.value ? popupTopic.innerHTML = ('Тема: ' + subject.value) : popupTopic.innerHTML ='Без темы';
-            describe.value ? popupDescript.innerHTML = ('Описание: ' + describe.value) : popupDescript.innerHTML ='Без описания';
+            subject.value ? popupTopic.innerText = ('Тема: ' + subject.value) : popupTopic.innerText ='Без темы';
+            describe.value ? popupDescript.innerText = ('Описание: ' + describe.value) : popupDescript.innerText ='Без описания';
         
             popup.classList.remove('hidden');
         });
