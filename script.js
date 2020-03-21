@@ -82,11 +82,11 @@ const portfolioHandler = () => {
     portfolioButtonsHandler(portfolio, portfolioItems);
 }
 
-const addBordersInPortfolio = (elem, elemItems) => {
+const addBordersInPortfolio = (elem) => {
     elem.addEventListener('click', (event)=>{
         if(!event.target.classList.contains('portfolio-item')) return;
 
-        elemItems.forEach((item) => item.classList.remove('portfolio-borders'));
+        elem.querySelectorAll('.portfolio-item').forEach((item) => item.classList.remove('portfolio-borders'));
         event.target.classList.add('portfolio-borders');
     })
 }
@@ -94,16 +94,20 @@ const addBordersInPortfolio = (elem, elemItems) => {
 const portfolioButtonsHandler = (elem, elemItems) => {
     let buttonsPanel = elem.querySelector('.buttons-panel'),
         portfolioButtons = elem.querySelectorAll('button'),
-        portfolioContainer = elem.querySelector('.layout-4-column');
+        portfolioContainer = elem.querySelector('.layout-4-column'),
+        itemsArr = [];
 
     buttonsPanel.addEventListener('click', (event) => {
         if(event.target.tagName != 'BUTTON') return;
 
         portfolioButtons.forEach((item) => item.classList.remove('active'));
         event.target.classList.add('active');
-        let sortedItems = sortItems(elemItems);
 
-        portfolioContainer.prepend(sortedItems[0]);
+        elem.querySelectorAll('.portfolio-item').forEach(item => itemsArr.push(item));
+        itemsArr.sort(() => {return Math.random() - 0.5});
+
+        portfolioContainer.innerHTML = '';
+        itemsArr.forEach(item => portfolioContainer.appendChild(item));
     });
 }
 
