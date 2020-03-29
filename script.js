@@ -11,7 +11,7 @@ window.onload = function() {
 const scrollHandler = () => {
 
     let sections = document.querySelectorAll('section'),
-        anchors = document.querySelectorAll('li > a'),
+        anchors = document.querySelectorAll('.navigation a'),
         currentPos = window.scrollY+95;
 
     sections.forEach((elem) => {
@@ -31,19 +31,22 @@ const burgerHandler = () => {
     let burger = document.querySelector('.menu-burger'),
         overlay = document.querySelector('.overlay'),
         navVert = document.querySelector('.navigation-vert'),
-        h1 = document.querySelector('h1');
+        h1 = document.querySelector('h1'),
+        logo = document.querySelector('.logo-mobile');
 
     burger.addEventListener('click', () => {
         if(!burger.classList.value.includes('burger-rotated')){
             burger.classList.add('burger-rotated');
             overlay.style.display = 'block';
             navVert.style.display = 'block';
+            logo.style.display = 'block';
             h1.classList.add('logo-transition');
         }
         else if(burger.classList.value.includes('burger-rotated')){
             burger.classList.remove('burger-rotated');
             overlay.style.display = 'none';
             navVert.style.display = 'none';
+            logo.style.display = 'none';
             h1.classList.remove('logo-transition');
 
         }
@@ -53,6 +56,7 @@ const burgerHandler = () => {
                 burger.classList.remove('burger-rotated');
                 overlay.style.display = 'none';
                 navVert.style.display = 'none';
+                logo.style.display = 'none';
                 h1.classList.remove('logo-transition');
                 console.log(event.target.tagName);
             }

@@ -2,10 +2,13 @@
 
 /* BASIC */
 * {
-    scroll-behavior: smooth;
+
     box-sizing: border-box;
 }
 
+body {
+    scroll-behavior: smooth;
+}
 a {
     text-decoration: none;
     color: #fff;
@@ -20,7 +23,7 @@ a {
 }
 
  .main-wrapper {
-    width: 100%;
+    width: 100%; 
     margin: 0 auto;
 }
 
@@ -109,6 +112,17 @@ header .wrapper {
     margin-bottom: 35px;
 }
 
+.logo-mobile {
+    display: none;
+    z-index: 300;
+    position: fixed;
+    left: 120px;
+    top: 27px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Lato Bold", sans-serif;
+}
+
 .overlay {
     display: none;
     position: fixed;
@@ -138,11 +152,10 @@ header h1 {
  
   }
 
-header h1::after {
+header h1::after, .logo-mobile::after {
     content:"*";
     color: #f06c64;
 }
-
 
 .header .navigation {
     width: 370px;
@@ -159,7 +172,6 @@ header h1::after {
     padding: 0;
     line-height: 15px;
 }
-
 
 .header .navigation li{
     letter-spacing: -0.3px;
@@ -1132,7 +1144,8 @@ footer .social {
 
 @media (max-width: 767px) {
     .main-wrapper {
-        min-width: 100%;
+ 
+        margin: 0 auto;
     }
     .services .wrapper, .portfolio .wrapper, .about-us .wrapper, .contact-us .wrapper, footer .wrapper {
         max-width: 320px;
@@ -1291,7 +1304,6 @@ footer .social {
         letter-spacing: 0.1px;
     }
 
-
     .contact-us {
         height: 970px;
         padding-top: 45px;
@@ -1317,11 +1329,15 @@ footer .social {
         display: none;
     }
     footer .wrapper {
-
         justify-content: center;
     }
 
-
-
 }
  
+@media (max-width: 375px) {
+    .main-wrapper {
+        width:100%;
+        min-width: 320px;
+    }
+
+}
