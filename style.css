@@ -66,7 +66,60 @@ header .wrapper {
 	-ms-flex-pack: justify;
     padding-top: 30px;
     padding-bottom: 37px;
+    position: relative;
 }
+
+.menu-burger {
+    display: none;
+    position: fixed;
+    left: 70px;
+    top: 26px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.burger-rotated {
+    transform: rotate(90deg);
+}
+
+.navigation-vert {
+    display: none;
+    min-width: 277px;
+    max-width: 70%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    background-color: #2d303a;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: "Lato Bold", sans-serif;
+    padding-top: 100px;
+    padding-left: 70px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.navigation-vert ul {
+    padding: 0;
+    min-width: 133px;
+    height: 255px;
+}
+.navigation-vert li {
+    margin-bottom: 35px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 150;
+    background-color: rgba(0,0,0,0.42);
+}
+
 
 header h1 {
     color: #fff;
@@ -77,13 +130,21 @@ header h1 {
     font-weight: 500;
     font-family: "Lato Bold", sans-serif;
 }
+.logo-transition {
+    position: absolute;
+    left: -10px;
+    top: 24px;
+    transition: right .5s;
+ 
+  }
 
 header h1::after {
     content:"*";
     color: #f06c64;
 }
 
-.navigation{
+
+.header .navigation {
     width: 370px;
     display: flex;
     display: -ms-flexbox;
@@ -99,7 +160,8 @@ header h1::after {
     line-height: 15px;
 }
 
-.navigation li{
+
+.header .navigation li{
     letter-spacing: -0.3px;
     position: relative;
 }
@@ -108,7 +170,7 @@ header h1::after {
     color: #f06c64;
 }
 
-.navigation li::after{
+.header .navigation li::after{
     content:"";
     width: 3px;
     height: 3px;
@@ -119,7 +181,7 @@ header h1::after {
     right: -17px;
 }
 
-.navigation li:last-child::after {
+.header .navigation li:last-child::after {
     content:"";
     width: 0;
     height: 0;
@@ -160,12 +222,14 @@ header h1::after {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 .home-button-vert, .home-button-hor {
     width: 43px;
     height: 43px;
     position: absolute;
+    z-index: 100;
 }
 
 .home-button-vert{
@@ -699,6 +763,8 @@ div.employee-photo.employee1 {
     display: -ms-flexbox;
     justify-content: space-between;
     -ms-flex-pack: justify;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     font-family: "Lato Regular", sans-serif;
     font-size: 12px;
 }
@@ -1063,3 +1129,199 @@ footer .social {
         margin: 5px 0 12px 0;
     }
 }
+
+@media (max-width: 767px) {
+    .main-wrapper {
+        min-width: 100%;
+    }
+    .services .wrapper, .portfolio .wrapper, .about-us .wrapper, .contact-us .wrapper, footer .wrapper {
+        max-width: 320px;
+    }
+    .header .navigation {
+        display: none;
+    }
+
+    .header {
+        height: 72px;
+    }
+    .header .wrapper{
+        width: 335px;
+        justify-content: center;
+        padding-top: 25px;
+    }
+    h1 {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        margin-left: 10px;
+        z-index: 300;
+    }
+    .menu-burger {
+        display: block;
+        z-index: 299;
+    }
+
+    .slider {
+        height: 220px;
+        padding: 0;
+        margin-top: 72px;
+    }
+    .slider .wrapper {
+        max-width: 355px;
+        height: 181px;
+    }
+
+    #slide2, #slide1 {
+        width: 295px;
+        height: 179px;
+    }
+    .phone-vertical {
+        width: 90px;
+        height: 179px;
+        top: 17px;
+        left: 0;
+    }
+    .phone-horizontal {
+        width: 179px;
+        height: 90px;
+        top: 60px;
+        left: 115px;
+    }
+    .vertical-cover {
+        width: 70px;
+        height: 122px;
+        top: 25px;
+        left: 5px;
+    }
+    
+    .horizontal-cover {
+        width: 122px;
+        height: 70px;
+        top: 5px;
+        left: 23px;
+    }
+    .home-button-vert, .home-button-hor {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    
+    .home-button-vert{
+        top: 145px;
+        left: 30px;
+    }
+    
+    .home-button-hor{
+        top: 30px;
+        left: 3px;
+    }
+
+
+    .services {
+        height: 1033px;
+        padding-top: 25px;
+        
+    }
+    .services .wrapper {
+        height: 972px;
+    }
+    .services .layout-3-column {
+        height: 686px;
+        margin-left: 5px;
+    }
+    .layout-3-column .flex-element:not(:first-child) {
+        margin-top: -24.5px;
+    }
+    .services .description {
+        height: 290px;
+ 
+    }
+    .service-descript {
+        margin-left: 15px; 
+    }
+
+    .portfolio {
+        height: 845px;
+        padding-top: 40px;
+    }
+    .portfolio .layout-4-column{
+        height: 554px;
+    }
+    .layout-4-column .portfolio-item {
+        width: 48%;
+        height: 128px;
+    }
+    .portfolio .description {
+        height: 200px;  
+    }
+    .layout-4-column .portfolio-item:nth-child(n+9){
+        display: none;
+    }
+
+    .about-us {
+        height: 1753px;
+        padding-top: 30px;
+    }
+    .about-us .wrapper {
+        height: 1674px;
+    }
+    .about-us .layout-3-column {
+        height: 1395px;
+    }
+    .about-us p, .contact-us p {
+       letter-spacing: 0.5px;
+    }
+    .about-us .description {
+        height: 265px;
+    }
+    .about-us .flex-element {
+        width: 96%;
+        height: 470px;
+        margin-bottom: 25px;
+    }
+    .about-us .employee-photo {
+        width: 314px;
+        height: 312px;
+    }
+    
+    .employee-description h3{
+        margin-top: 20px;
+    }
+    .employee-description p {
+        margin-top: 11px;
+        letter-spacing: 0.1px;
+    }
+
+
+    .contact-us {
+        height: 970px;
+        padding-top: 45px;
+    }
+    .contact-us .description {
+        height: 280px;
+    }
+    .contact-us .contact_form {
+        width: 100%;
+        height: 377px;
+        margin-bottom: 30px;
+    }
+
+    .contact-info {
+        width: 100%;
+    }
+    input[type="submit"] {
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+    }
+    .copy {
+        display: none;
+    }
+    footer .wrapper {
+
+        justify-content: center;
+    }
+
+
+
+}
+ 
