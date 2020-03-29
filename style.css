@@ -1335,9 +1335,10 @@ footer .social {
 }
  
 @media (max-width: 375px) {
+
     .main-wrapper {
         width:100%;
-        min-width: 320px;
+        min-width: 374px;
     }
 
 }
